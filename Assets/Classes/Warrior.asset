@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e847f8969dbce48a3c441a7caf08b7, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: Assembly-CSharp::ClassData
+  className: 
+  minHP: 0
+  maxHP: 0
+  minAttack: 0
+  maxAttack: 0
+  minMagic: 0
+  maxMagic: 0
+  minArmor: 0
+  maxArmor: 0
+  minResistance: 0
+  maxResistance: 0
+  minSpeed: 0
+  maxSpeed: 0
+  minArmorPen: 0
+  maxArmorPen: 0
+  minMagicPenMin: 0
+  maxMagicPenMax: 0
+  minCrit: 0
+  maxCrit: 0
+  hpGrowth: 0
+  attackGrowth: 0
+  magicGrowth: 0
+  armorGrowth: 0
+  resistanceGrowth: 0
+  speedGrowth: 0
+  armorPenGrowth: 0
+  magicPenGrowth: 0
+  critGrowth: 0
+  evolutionOptionA: {fileID: 0}
+  evolutionOptionB: {fileID: 0}
+  evolutionOptionC: {fileID: 0}
