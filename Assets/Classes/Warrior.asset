@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
   className: 
-  minHP: 0
-  maxHP: 0
-  minAttack: 0
-  maxAttack: 0
-  minMagic: 0
-  maxMagic: 0
-  minArmor: 0
-  maxArmor: 0
-  minResistance: 0
-  maxResistance: 0
-  minSpeed: 0
-  maxSpeed: 0
+  minHP: 15
+  maxHP: 25
+  minAttack: 5
+  maxAttack: 10
+  minMagic: 5
+  maxMagic: 10
+  minArmor: 2
+  maxArmor: 7
+  minResistance: 2
+  maxResistance: 7
+  minSpeed: 1
+  maxSpeed: 5
   minArmorPen: 0
-  maxArmorPen: 0
-  minMagicPenMin: 0
-  maxMagicPenMax: 0
+  maxArmorPen: 2
+  minMagicPen: 0
+  maxMagicPen: 0
   minCrit: 0
-  maxCrit: 0
-  hpGrowth: 0
-  attackGrowth: 0
+  maxCrit: 5
+  hpGrowth: 5
+  attackGrowth: 2
   magicGrowth: 0
-  armorGrowth: 0
-  resistanceGrowth: 0
-  speedGrowth: 0
+  armorGrowth: 1
+  resistanceGrowth: 1
+  speedGrowth: 1
   armorPenGrowth: 0
   magicPenGrowth: 0
   critGrowth: 0

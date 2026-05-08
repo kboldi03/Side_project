@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     private List<CharacterStats> turnOrder = new List<CharacterStats>();
     private int currentTurnIndex = 0;
 
-    void Start()
+    void Awake()
     {
         BuildTurnOrder();
     }
