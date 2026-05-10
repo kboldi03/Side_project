@@ -68,6 +68,8 @@ public class CombatManager : MonoBehaviour
             {
                 partyMembers.Remove(character);
             }
+
+            Destroy(character.gameObject);
         }
     }
 

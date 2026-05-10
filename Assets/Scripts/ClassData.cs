@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewClass", menuName = "Game/Class Data")]
 public class ClassData : ScriptableObject
@@ -6,6 +8,10 @@ public class ClassData : ScriptableObject
 
     [Header("Identity")]
     public string className;
+    public int levelCap;
+
+    [Header("Abilities")]
+    public List<SkillData> skills = new List<SkillData>();
 
     [Header("Base Stat Ranges")]
     public int minHP; public int maxHP;

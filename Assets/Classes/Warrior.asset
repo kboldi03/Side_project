@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e847f8969dbce48a3c441a7caf08b7, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
-  className: 
+  className: Warrior
+  levelCap: 0
+  skills:
+  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
   minHP: 15
   maxHP: 25
   minAttack: 5

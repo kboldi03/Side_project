@@ -28,6 +28,14 @@ public class CharacterStats : MonoBehaviour
     public int currentXP = 0;
     public int xpToNextLevel = 100;
 
+    [Header("Permanent Bonuses")]
+    public int permAttack;
+    public int permMagic;
+    public int permArmor;
+    public int permResistance;
+    public int permSpeed;
+    public int permCrit;
+
     public void GainXP(int amount)
     {
         currentXP += amount;
@@ -83,6 +91,8 @@ public class CharacterStats : MonoBehaviour
         {
             currentHP -= finalDamage;
         }
+
+        FloatingTextSpawner.instance.Spawn(finalDamage.ToString(), transform.position, Color.red);
 
     }
 
