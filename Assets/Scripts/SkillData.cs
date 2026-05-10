@@ -31,6 +31,7 @@ public class SkillData : ScriptableObject
     [Header("Identity")]
     public string skillName;
     public string description;
+    public Sprite icon;
 
     [Header("Targeting")]
     public TargetType targetType;

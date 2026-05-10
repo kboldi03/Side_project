@@ -16,6 +16,8 @@ MonoBehaviour:
   levelCap: 0
   skills:
   - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
+  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
+  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
   minHP: 15
   maxHP: 25
   minAttack: 5

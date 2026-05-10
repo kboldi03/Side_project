@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df4e402d2bb17b4391bd38082a27d9c, type: 3}
   m_Name: Strike
   m_EditorClassIdentifier: Assembly-CSharp::AbilityData
-  skillName: 
+  skillName: Strike
   description: A basic attack
   targetType: 0
   damageType: 0
