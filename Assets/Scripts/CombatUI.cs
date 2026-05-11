@@ -48,10 +48,7 @@ public class CombatUI : MonoBehaviour
 
     void SpawnSkillList(CharacterStats current)
     {
-        Debug.Log("Character: " + current.characterName);
-        Debug.Log("ClassData: " + current.classData);
-        Debug.Log("Skills: " + current.classData.skills);
-        Debug.Log("Skills count: " + current.classData.skills.Count);
+        
         ClearSkillList();
 
         foreach(SkillData skill in current.classData.skills)
