@@ -4,15 +4,17 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     private Slider slider;
-    public CharacterStats stats;
+    private CharacterStats stats;
 
     void Start()
     {
         slider = GetComponent<Slider>();
+        stats = GetComponentInParent<CharacterStats>();
     }
 
     void Update()
     {
+        if (stats == null) return;
         slider.value = (float)stats.currentHP / (float)stats.maxHP;
     }
 

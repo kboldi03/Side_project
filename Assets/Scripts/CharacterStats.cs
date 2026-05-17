@@ -7,6 +7,9 @@ public class CharacterStats : MonoBehaviour
     public string characterName;
     public ClassData classData;
 
+    [Header("UI")]
+    public GameObject turnArrow;
+
     [Header("Enemy Data")]
     public int xpReward;
     public bool usesMagic;

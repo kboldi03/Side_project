@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     private List<CharacterStats> turnOrder = new List<CharacterStats>();
     private int currentTurnIndex = 0;
 
-    void Awake()
+    void Start()
     {
         BuildTurnOrder();
     }
@@ -20,8 +20,17 @@ public class CombatManager : MonoBehaviour
     void BuildTurnOrder()
     {
         turnOrder.Clear();
-        turnOrder.AddRange(partyMembers);
-        turnOrder.AddRange(enemies);
+        foreach (CharacterStats c in partyMembers)
+        {
+            if (c != null) turnOrder.Add(c);
+        }
+        foreach (CharacterStats c in enemies)
+        {
+            if (c != null) turnOrder.Add(c);
+        }
+
+
+
         turnOrder = turnOrder.OrderByDescending(c =>c.speed).ToList();
     }
 

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class CombatUI : MonoBehaviour
 {
@@ -16,28 +17,37 @@ public class CombatUI : MonoBehaviour
 
     void Start()
     {
-        UpdateUI();
+        StartCoroutine(UpdateUI());
     }
 
-    void UpdateUI()
+    IEnumerator UpdateUI()
     {
         CharacterStats current = combatManager.getCurrentCombatant();
         bool isPlayerTurn = combatManager.partyMembers.Contains(current);
 
+        foreach (CharacterStats c in combatManager.partyMembers)
+            if (c.turnArrow != null) c.turnArrow.SetActive(false);
+        foreach (CharacterStats c in combatManager.enemies)
+            if (c.turnArrow != null) c.turnArrow.SetActive(false);
+
+        current.turnArrow?.SetActive(true);
+
         if (!isPlayerTurn)
         {
             turnIndicator.text = current.characterName + "'s turn";
+            yield return new WaitForSeconds(1f);
+
             combatManager.ExecuteEnemyTurn(current);
 
             if (combatManager.isDefeat())
             {
                 turnIndicator.text = "Defeat!";
                 ClearSkillList();
-                return;
+                yield break;
             }
 
             combatManager.NextTurn();
-            UpdateUI();
+            StartCoroutine(UpdateUI());
         }
         else
         {
@@ -125,7 +135,7 @@ public class CombatUI : MonoBehaviour
         }
 
         combatManager.NextTurn();
-        UpdateUI();
+        StartCoroutine(UpdateUI());
     }
 
     public void OnEntityClicked(CharacterStats entity)

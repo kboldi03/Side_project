@@ -6,6 +6,9 @@ public class EnemyData : ScriptableObject
     [Header("Identity")]
     public string enemyName;
 
+    [Header("Visuals")]
+    public Sprite sprite;
+
     [Header("Stat Ranges")]
     public int minHP; public int maxHP;
     public int minAttack; public int maxAttack;

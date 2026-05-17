@@ -10,6 +10,9 @@ public class ClassData : ScriptableObject
     public string className;
     public int levelCap;
 
+    [Header("Visuals")]
+    public Sprite sprite;
+
     [Header("Abilities")]
     public List<SkillData> skills = new List<SkillData>();
 
