@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Goblin
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Goblin
+  sprite: {fileID: 2572365745140355499, guid: 3f5512b33c6068c49927565f0fc56353, type: 3}
   minHP: 10
   maxHP: 15
   minAttack: 4

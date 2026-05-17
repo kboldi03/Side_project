@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
   className: Warrior
   levelCap: 0
+  sprite: {fileID: 4495478712733764576, guid: 61437b73d86a7da4da61d85c5813c9a5, type: 3}
   skills:
-  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
-  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
   - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
   minHP: 15
   maxHP: 25

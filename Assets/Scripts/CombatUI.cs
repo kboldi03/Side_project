@@ -129,12 +129,15 @@ public class CombatUI : MonoBehaviour
 
         if (combatManager.isVictory())
         {
+            combatManager.DistributeXP();
             turnIndicator.text = "Victory!";
             ClearSkillList();
             return;
         }
 
         combatManager.NextTurn();
+        selectedSkill = null;
+        ClearSkillList();
         StartCoroutine(UpdateUI());
     }
 
