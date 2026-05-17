@@ -29,23 +29,6 @@ Skills are ScriptableObjects with configurable damage type, target type and dama
 ### Class Evolution System (in progress)
 Three base classes — Warrior, Archer, Mage — each with branching evolution paths at level thresholds.
 
-## 📁 Project Structure
-Assets/
-├── Scripts/
-│   ├── CharacterStats.cs      — unified stat system for all entities
-│   ├── CombatManager.cs       — turn order, death handling, XP distribution
-│   ├── CombatUI.cs            — skill buttons, turn indicator, target selection
-│   ├── EntityFactory.cs       — runtime character and enemy spawning
-│   ├── ClassData.cs           — ScriptableObject defining class stat ranges and growth
-│   ├── EnemyData.cs           — ScriptableObject defining enemy stat ranges
-│   ├── SkillData.cs           — ScriptableObject defining skill effects and targeting
-│   ├── FloatingTextSpawner.cs — world space damage and heal number display
-│   └── HealthBar.cs           — dynamic health bar tied to CharacterStats
-├── Classes/                   — ClassData assets (Warrior, Knight, etc.)
-├── Enemies/                   — EnemyData assets (Goblin, etc.)
-├── Skills/                    — SkillData assets (Strike, etc.)
-└── Prefabs/                   — Character and UI prefabs
-
 ## 🗺️ Planned Features
 - 20-floor dungeon with corruption mechanic — cleared floors reclaim over time based on player movement
 - Tavern recruitment with randomized recruits scaling to camp floor depth
@@ -58,4 +41,6 @@ Assets/
 ## 🔧 Built With
 - Unity 2D
 - C#
-- ScriptableObject architecture<img width="917" height="513" alt="gamepick" src="https://github.com/user-attachments/assets/dca04088-92f0-40aa-8edc-7a56ebd50a3f" />
+
+## 📸 Screenshots
+Combat system in action<img width="917" height="513" alt="gamepick" src="https://github.com/user-attachments/assets/dca04088-92f0-40aa-8edc-7a56ebd50a3f" />
