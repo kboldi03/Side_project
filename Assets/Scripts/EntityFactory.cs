@@ -2,6 +2,50 @@ using UnityEngine;
 
 public class EntityFactory : MonoBehaviour 
 {
+    public static CharacterStats CreateFromSaveData(CharacterSaveData data, GameObject prefab, ClassData[] allClasses)
+    {
+        GameObject go = Instantiate(prefab);
+        CharacterStats stats = go.GetComponent<CharacterStats>();
+
+        stats.characterName = data.characterName;
+        stats.maxHP = data.maxHP;
+        stats.currentHP = data.currentHP;
+        stats.attack = data.attack;
+        stats.magic = data.magic;
+        stats.armor = data.armor;
+        stats.resistance = data.resistance;
+        stats.speed = data.speed;
+        stats.armorPen = data.armorPen;
+        stats.magicPen = data.magicPen;
+        stats.crit = data.crit;
+        stats.level = data.level;
+        stats.currentXP = data.currentXP;
+        stats.xpToNextLevel = data.xpToNextLevel;
+        stats.permAttack = data.permAttack;
+        stats.permMagic = data.permMagic;
+        stats.permArmor = data.permArmor;
+        stats.permResistance = data.permResistance;
+        stats.permSpeed = data.permSpeed;
+        stats.permCrit = data.permCrit;
+        stats.usesMagic = data.usesMagic;
+        stats.xpReward = data.xpReward;
+
+
+        foreach (ClassData classData in allClasses)
+        {
+            if (classData.className == data.className)
+            {
+                stats.classData = classData;
+                break;
+            }
+        }
+        if (stats.classData != null)
+        {
+            go.GetComponent<SpriteRenderer>().sprite = stats.classData.sprite;
+        }
+
+        return stats;
+    }
     
     public static CharacterStats CreateCharacter(ClassData classData, GameObject prefab, int floorBonus = 0)
     {

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e918010adebb54dbe4b194183ba36e, type: 3}
+  m_Name: Goblin Chief
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  enemyName: Goblin
+  sprite: {fileID: 2572365745140355499, guid: 3f5512b33c6068c49927565f0fc56353, type: 3}
+  minHP: 30
+  maxHP: 45
+  minAttack: 8
+  maxAttack: 12
+  minMagic: 0
+  maxMagic: 0
+  minArmor: 3
+  maxArmor: 6
+  minResistance: 0
+  maxResistance: 0
+  minSpeed: 2
+  maxSpeed: 5
+  minArmorPen: 0
+  maxArmorPen: 0
+  minMagicPen: 0
+  maxMagicPen: 0
+  usesMagic: 0
+  xpReward: 60

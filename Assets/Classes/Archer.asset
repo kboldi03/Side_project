@@ -10,38 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e847f8969dbce48a3c441a7caf08b7, type: 3}
-  m_Name: Warrior
+  m_Name: Archer
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
-  className: Warrior
+  className: Archer
   levelCap: 30
-  sprite: {fileID: 4495478712733764576, guid: 61437b73d86a7da4da61d85c5813c9a5, type: 3}
-  skills:
-  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
-  minHP: 15
-  maxHP: 25
-  minAttack: 5
-  maxAttack: 10
-  minMagic: 5
-  maxMagic: 10
-  minArmor: 2
-  maxArmor: 7
-  minResistance: 2
-  maxResistance: 7
-  minSpeed: 1
-  maxSpeed: 5
-  minArmorPen: 0
-  maxArmorPen: 2
+  sprite: {fileID: 1783237378354427923, guid: 2674b21a10bd4cc4c8ecd8281883e169, type: 3}
+  skills: []
+  minHP: 10
+  maxHP: 20
+  minAttack: 7
+  maxAttack: 12
+  minMagic: 2
+  maxMagic: 7
+  minArmor: 0
+  maxArmor: 4
+  minResistance: 0
+  maxResistance: 4
+  minSpeed: 3
+  maxSpeed: 8
+  minArmorPen: 2
+  maxArmorPen: 4
   minMagicPen: 0
-  maxMagicPen: 0
-  minCrit: 0
-  maxCrit: 5
-  hpGrowth: 8
-  attackGrowth: 2
+  maxMagicPen: 10
+  minCrit: 5
+  maxCrit: 10
+  hpGrowth: 6
+  attackGrowth: 4
   magicGrowth: 0
-  armorGrowth: 2
-  resistanceGrowth: 2
-  speedGrowth: 1
-  armorPenGrowth: 0
+  armorGrowth: 1
+  resistanceGrowth: 1
+  speedGrowth: 2
+  armorPenGrowth: 1
   magicPenGrowth: 0
   critGrowth: 0
   evolutionOptionA: {fileID: 0}

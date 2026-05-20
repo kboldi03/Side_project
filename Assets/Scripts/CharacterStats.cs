@@ -117,4 +117,33 @@ public class CharacterStats : MonoBehaviour
         }
         return baseDamage;
     }
+
+    public CharacterSaveData ToSaveData()
+    {
+        CharacterSaveData data = new CharacterSaveData();
+        data.characterName = characterName;
+        data.className = classData != null ? classData.className : "";
+        data.maxHP = maxHP;
+        data.currentHP = currentHP;
+        data.attack = attack;
+        data.magic = magic;
+        data.armor = armor;
+        data.resistance = resistance;
+        data.speed = speed;
+        data.armorPen = armorPen;
+        data.magicPen = magicPen;
+        data.crit = crit;
+        data.level = level;
+        data.currentXP = currentXP;
+        data.xpToNextLevel = xpToNextLevel;
+        data.permAttack = permAttack;
+        data.permMagic = permMagic;
+        data.permArmor = permArmor;
+        data.permResistance = permResistance;
+        data.permSpeed = permSpeed;
+        data.permCrit = permCrit;
+        data.usesMagic = usesMagic;
+        data.xpReward = xpReward;
+        return data;
+    }
 }

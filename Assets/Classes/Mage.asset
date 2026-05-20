@@ -10,39 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e847f8969dbce48a3c441a7caf08b7, type: 3}
-  m_Name: Warrior
+  m_Name: Mage
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
-  className: Warrior
+  className: Mage
   levelCap: 30
-  sprite: {fileID: 4495478712733764576, guid: 61437b73d86a7da4da61d85c5813c9a5, type: 3}
-  skills:
-  - {fileID: 11400000, guid: daa39bf1c97387443952676b4f3673c5, type: 2}
-  minHP: 15
-  maxHP: 25
-  minAttack: 5
-  maxAttack: 10
-  minMagic: 5
-  maxMagic: 10
-  minArmor: 2
-  maxArmor: 7
-  minResistance: 2
-  maxResistance: 7
-  minSpeed: 1
-  maxSpeed: 5
+  sprite: {fileID: 2971653748508199937, guid: 4709f5a3a662bd347899deea93878a22, type: 3}
+  skills: []
+  minHP: 12
+  maxHP: 18
+  minAttack: 2
+  maxAttack: 15
+  minMagic: 4
+  maxMagic: 8
+  minArmor: 0
+  maxArmor: 2
+  minResistance: 0
+  maxResistance: 2
+  minSpeed: 2
+  maxSpeed: 3
   minArmorPen: 0
-  maxArmorPen: 2
-  minMagicPen: 0
-  maxMagicPen: 0
+  maxArmorPen: 0
+  minMagicPen: 2
+  maxMagicPen: 4
   minCrit: 0
-  maxCrit: 5
-  hpGrowth: 8
-  attackGrowth: 2
-  magicGrowth: 0
-  armorGrowth: 2
-  resistanceGrowth: 2
+  maxCrit: 0
+  hpGrowth: 4
+  attackGrowth: 0
+  magicGrowth: 3
+  armorGrowth: 0
+  resistanceGrowth: 0
   speedGrowth: 1
   armorPenGrowth: 0
-  magicPenGrowth: 0
+  magicPenGrowth: 1
   critGrowth: 0
   evolutionOptionA: {fileID: 0}
   evolutionOptionB: {fileID: 0}

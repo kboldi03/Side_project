@@ -12,4 +12,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("CityScene");
     }
+
+    public void LoadTavern()
+    {
+        SceneManager.LoadScene("TavernScene");
+    }
 }
