@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClassData
   className: Archer
   levelCap: 30
+  gender: 1
   sprite: {fileID: 1783237378354427923, guid: 2674b21a10bd4cc4c8ecd8281883e169, type: 3}
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: 30fb3786c90b3674988d9f6784e05ea1, type: 2}
   minHP: 10
   maxHP: 20
   minAttack: 7

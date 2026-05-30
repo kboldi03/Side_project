@@ -9,6 +9,7 @@ public class ClassData : ScriptableObject
     [Header("Identity")]
     public string className;
     public int levelCap;
+    public Gender gender;
 
     [Header("Visuals")]
     public Sprite sprite;

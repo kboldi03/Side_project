@@ -19,12 +19,16 @@ public class CharacterSaveData
     public int currentXP;
     public int xpToNextLevel;
 
+    public string equippedItemName;
+
+    /*
     public int permAttack;
     public int permMagic;
     public int permArmor;
     public int permResistance;
     public int permSpeed;
     public int permCrit;
+    */
 
     public bool usesMagic;
     public int xpReward;

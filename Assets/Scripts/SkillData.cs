@@ -1,30 +1,5 @@
 using UnityEngine;
 
-public enum TargetType
-{
-    SingleEnemy,
-    AllEnemies,
-    SingleAlly,
-    AllAllies,
-    Self
-}
-
-public enum DamageType
-{
-    Physical,
-    Magical,
-    None
-}
-
-public enum BuffType
-{
-    Attack,
-    Magic,
-    Armor,
-    Resistance,
-    Crit
-}
-
 [CreateAssetMenu(fileName = "NewAbility", menuName = "Game/Ability")]
 public class SkillData : ScriptableObject
 {

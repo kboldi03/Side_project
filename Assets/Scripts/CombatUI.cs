@@ -15,8 +15,11 @@ public class CombatUI : MonoBehaviour
     private SkillData selectedSkill;
     private List<GameObject> skillList = new List<GameObject>();
 
+    private Dictionary<CharacterStats, GameObject> turnArrows = new Dictionary<CharacterStats, GameObject>();
+
     void Start()
     {
+        BuildArrowDictionary();
         StartCoroutine(UpdateUI());
     }
 
@@ -25,12 +28,15 @@ public class CombatUI : MonoBehaviour
         CharacterStats current = combatManager.getCurrentCombatant();
         bool isPlayerTurn = combatManager.partyMembers.Contains(current);
 
-        foreach (CharacterStats c in combatManager.partyMembers)
-            if (c.turnArrow != null) c.turnArrow.SetActive(false);
-        foreach (CharacterStats c in combatManager.enemies)
-            if (c.turnArrow != null) c.turnArrow.SetActive(false);
+        foreach(var arrow in turnArrows.Values)
+        {
+            arrow.SetActive(false);
+        }
 
-        current.turnArrow?.SetActive(true);
+        if(turnArrows.ContainsKey(current))
+        {
+            turnArrows[current].SetActive(true);
+        }    
 
         if (!isPlayerTurn)
         {
@@ -38,6 +44,16 @@ public class CombatUI : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             combatManager.ExecuteEnemyTurn(current);
+
+            foreach (var key in new List<CharacterStats>(turnArrows.Keys))
+            {
+                if(!combatManager.partyMembers.Contains(key) && !combatManager.enemies.Contains(key))
+                {
+                    turnArrows.Remove(key);
+                    
+                }
+            }
+
 
             if (combatManager.isDefeat())
             {
@@ -54,6 +70,14 @@ public class CombatUI : MonoBehaviour
             turnIndicator.text = current.characterName + "'s turn";
             SpawnSkillList(current);
         }
+    }
+
+    void BuildArrowDictionary()
+    {
+        foreach (CharacterStats c in combatManager.partyMembers)
+            turnArrows[c] = c.transform.Find("Arrow").gameObject;
+        foreach (CharacterStats c in combatManager.enemies)
+            turnArrows[c] = c.transform.Find("Arrow").gameObject;
     }
 
     void SpawnSkillList(CharacterStats current)
@@ -87,28 +111,8 @@ public class CombatUI : MonoBehaviour
 
     void OnSkillSelected(SkillData skill)
     {
-
-        if (skill.targetType == TargetType.AllEnemies)
-        {
-            ExecuteSkill(combatManager.enemies);
-        }
-        else if(skill.targetType == TargetType.AllAllies)
-        {
-            ExecuteSkill(combatManager.partyMembers);
-        }
-        else if(skill.targetType == TargetType.Self)
-        {
-            List<CharacterStats> self = new List<CharacterStats>();
-            self.Add(combatManager.getCurrentCombatant());
-            ExecuteSkill(self);
-        }
-        else
-        {
-            selectedSkill = skill;
-            turnIndicator.text = "Select a target";
-            
-        }
-
+        selectedSkill = skill;
+        turnIndicator.text = "Select a target";
     }
 
     void ExecuteSkill(List<CharacterStats> targets)
@@ -124,12 +128,14 @@ public class CombatUI : MonoBehaviour
                 target.TakeDamage(damage, selectedSkill.damageType == DamageType.Magical, 
                                   selectedSkill.damageType == DamageType.Magical ? attacker.magicPen : attacker.armorPen);
                 combatManager.HandleDeath(target);
+                turnArrows.Remove(target);
             }
         }
 
         if (combatManager.isVictory())
         {
             combatManager.DistributeXP();
+            combatManager.SavePartyToGameManager();
             turnIndicator.text = "Victory!";
             ClearSkillList();
             return;
@@ -145,15 +151,32 @@ public class CombatUI : MonoBehaviour
     {
         if (selectedSkill == null) return;
 
+        List<CharacterStats> targets = new List<CharacterStats>();
+
         if(selectedSkill.targetType == TargetType.SingleEnemy && combatManager.enemies.Contains(entity))
         {
-            List<CharacterStats> target = new List<CharacterStats> { entity };
-            ExecuteSkill(target);
+            targets.Add(entity);
         }
         else if(selectedSkill.targetType == TargetType.SingleAlly && combatManager.partyMembers.Contains(entity))
         {
-            List<CharacterStats> target = new List<CharacterStats> { entity };
-            ExecuteSkill(target);
+            targets.Add(entity);
+        }
+        else if(selectedSkill.targetType == TargetType.AllEnemies)
+        {
+            targets.AddRange(combatManager.enemies);
+        }
+        else if(selectedSkill.targetType == TargetType.AllAllies)
+        {
+            targets.AddRange(combatManager.partyMembers);
+        }
+        else if(selectedSkill.targetType == TargetType.Self)
+        {
+            targets.Add(combatManager.getCurrentCombatant());
+        }
+
+        if (targets.Count > 0)
+        {
+            ExecuteSkill(targets);
         }
     }
 }

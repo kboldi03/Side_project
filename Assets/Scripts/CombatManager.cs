@@ -107,7 +107,14 @@ public class CombatManager : MonoBehaviour
         return partyMembers.Count == 0;
     }
 
-
+    public void SavePartyToGameManager()
+    {
+        GameManager.instance.party.Clear();
+        foreach(CharacterStats member in partyMembers)
+        {
+            GameManager.instance.party.Add(member.ToSaveData());
+        }
+    }
 
 
     

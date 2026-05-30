@@ -12,7 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScene.unity
     guid: 367ba6f4bbe54cf44a9e44b25231299e
   - enabled: 1
-    path: Assets/TavernScene.unity
+    path: Assets/Scenes/TavernScene.unity
     guid: b09f9f752d54bcf48af2eab5270449d3
+  - enabled: 1
+    path: Assets/Scenes/BarackScene.unity
+    guid: f7ab5390049b10443843bdb2c37ef92a
+  - enabled: 1
+    path: Assets/Scenes/BlacksmithScene.unity
+    guid: 8c20dd907e931dc42abcddcf5cf3d93b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

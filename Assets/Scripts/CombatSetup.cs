@@ -23,6 +23,8 @@ public class CombatSetup : MonoBehaviour
     [Header("All Classes")]
     public ClassData[] allClasses;
 
+    public NameDatabase nameDatabase;
+
     void Awake()
     {
         SpawnParty();
@@ -39,7 +41,7 @@ public class CombatSetup : MonoBehaviour
                 if (partyClasses[i] == null) continue;
                 if (i >= partySlots.Length) break;
 
-                CharacterStats character = EntityFactory.CreateCharacter(partyClasses[i], characterPrefab);
+                CharacterStats character = EntityFactory.CreateCharacter(partyClasses[i], characterPrefab, nameDatabase);
                 character.transform.position = partySlots[i].position;
                 combatManager.partyMembers.Add(character);
             }

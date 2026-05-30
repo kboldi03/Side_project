@@ -1624,18 +1624,18 @@ PrefabInstance:
     - target: {fileID: 282471982711339192, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1952559696}
+      objectReference: {fileID: 1565212463}
     - target: {fileID: 282471982711339192, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 282471982711339192, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadCity
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 282471982711339192, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: SceneButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 282471982711339192, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1748,8 +1748,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6544448724810144461, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565212463}
   m_SourcePrefab: {fileID: 100100000, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
+--- !u!1 &1017153863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6544448724810144461, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
+  m_PrefabInstance: {fileID: 1017153862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1123069973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +2163,7 @@ MonoBehaviour:
   combatManager: {fileID: 732093379}
   turnIndicator: {fileID: 1770829458}
   skillPanel: {fileID: 1123069974}
-  skillButtonPrefab: {fileID: 2732936407412645866, guid: 5db87030f14484e419a0a4beb46629a9, type: 3}
+  skillButtonPrefab: {fileID: 2732936407412645866, guid: 8773a1bf6c71a7b4a914739d51087655, type: 3}
 --- !u!4 &1520773375
 Transform:
   m_ObjectHideFlags: 0
@@ -2176,6 +2184,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3547550995436256392, guid: 20d6e8cb13b2533448cb3f1b73483577, type: 3}
   m_PrefabInstance: {fileID: 1017153862}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1565212463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017153863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: CityScene
 --- !u!1 &1602546899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,50 +2425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770829456}
   m_CullTransparentMesh: 1
---- !u!1 &1952559695
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1952559697}
-  - component: {fileID: 1952559696}
-  m_Layer: 0
-  m_Name: SceneLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1952559696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952559695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
---- !u!4 &1952559697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952559695}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1175.7535, y: 428.49323, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008155223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,4 +2708,3 @@ SceneRoots:
   - {fileID: 682882080}
   - {fileID: 2121036671}
   - {fileID: 2008155225}
-  - {fileID: 1952559697}

@@ -151,6 +151,7 @@ MonoBehaviour:
   recruitCardPrefab: {fileID: 8193524273184741204, guid: a2c11cbb8eba3584faceb3e29e7f08d9, type: 3}
   recruitsPanel: {fileID: 1271733087}
   characterPrefab: {fileID: 261439634619050314, guid: 147b03b807361404fbc9fbee7840bbfb, type: 3}
+  nameDatabase: {fileID: 11400000, guid: af0d317d7f572834299aae96f8e9af09, type: 2}
   availableClasses:
   - {fileID: 11400000, guid: 4c370fdb769081049ab0608d458adca9, type: 2}
   - {fileID: 11400000, guid: a06d735a9cfaef6488fced8b0db19fd2, type: 2}
@@ -288,6 +289,7 @@ GameObject:
   - component: {fileID: 549501110}
   - component: {fileID: 549501109}
   - component: {fileID: 549501108}
+  - component: {fileID: 549501111}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -359,9 +361,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1194821158}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadCity
+      - m_Target: {fileID: 549501111}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -409,6 +411,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549501106}
   m_CullTransparentMesh: 1
+--- !u!114 &549501111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549501106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: CityScene
 --- !u!1 &579423378
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,50 +773,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035763456}
   m_CullTransparentMesh: 1
---- !u!1 &1194821157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1194821159}
-  - component: {fileID: 1194821158}
-  m_Layer: 0
-  m_Name: SceneLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1194821158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194821157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
---- !u!4 &1194821159
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194821157}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271733086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Tavern
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1125,7 +1096,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 919372211}
-  - {fileID: 1194821159}
   - {fileID: 128542043}
   - {fileID: 154655695}
   - {fileID: 1397457403}

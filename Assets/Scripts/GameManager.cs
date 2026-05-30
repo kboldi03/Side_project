@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Party")]
     public List<CharacterSaveData> party = new List<CharacterSaveData>();
+    public List<string> inventory = new List<string>();
 
     [Header("Corruption")]
     public int corruptionTicks = 0;
@@ -26,5 +28,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

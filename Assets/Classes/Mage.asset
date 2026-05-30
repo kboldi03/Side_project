@@ -15,13 +15,14 @@ MonoBehaviour:
   className: Mage
   levelCap: 30
   sprite: {fileID: 2971653748508199937, guid: 4709f5a3a662bd347899deea93878a22, type: 3}
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: 53078f05e17e53341a14daf85e6e3ba4, type: 2}
   minHP: 12
   maxHP: 18
   minAttack: 2
   maxAttack: 15
-  minMagic: 4
-  maxMagic: 8
+  minMagic: 6
+  maxMagic: 10
   minArmor: 0
   maxArmor: 2
   minResistance: 0

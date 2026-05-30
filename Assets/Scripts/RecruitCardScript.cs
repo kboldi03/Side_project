@@ -28,13 +28,15 @@ public class RecruitCard : MonoBehaviour
         characterSprite.sprite = stats.classData.sprite;
 
         statsText.text =
-            "HP:  " + stats.maxHP + "\n" +
-            "ATK: " + stats.attack + "\n" +
-            "MAG: " + stats.magic + "\n" +
-            "ARM: " + stats.armor + "\n" +
-            "RES: " + stats.resistance + "\n" +
-            "SPD: " + stats.speed + "\n" +
-            "CRT: " + stats.crit;
+            "HP: " + stats.maxHP + "\n" +
+            "Attack: " + stats.attack + "\n" +
+            "Magic: " + stats.magic + "\n" +
+            "Armor: " + stats.armor + "\n" +
+            "Resistance: " + stats.resistance + "\n" +
+            "Speed: " + stats.speed + "\n" +
+            "Crit: " + stats.crit + "\n" +
+            "Armor Penetration: " + stats.armorPen + "\n" +
+            "Magic Penetration: " + stats.magicPen;
     }
 
     public void OnInspectClicked()
@@ -53,8 +55,10 @@ public class RecruitCard : MonoBehaviour
             return;
         }
         GameManager.instance.party.Add(recruitStats.ToSaveData());
-        gameObject.SetActive(false);
-        Debug.Log("Hired: " + recruitStats.characterName);
+        CanvasGroup cg = GetComponent<CanvasGroup>();
+        cg.alpha = 0;
+        cg.interactable = false;
+        cg.blocksRaycasts = false;
 
     }
 }

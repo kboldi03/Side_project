@@ -21,12 +21,14 @@ public class EntityFactory : MonoBehaviour
         stats.level = data.level;
         stats.currentXP = data.currentXP;
         stats.xpToNextLevel = data.xpToNextLevel;
+        /*
         stats.permAttack = data.permAttack;
         stats.permMagic = data.permMagic;
         stats.permArmor = data.permArmor;
         stats.permResistance = data.permResistance;
         stats.permSpeed = data.permSpeed;
         stats.permCrit = data.permCrit;
+        */
         stats.usesMagic = data.usesMagic;
         stats.xpReward = data.xpReward;
 
@@ -47,13 +49,13 @@ public class EntityFactory : MonoBehaviour
         return stats;
     }
     
-    public static CharacterStats CreateCharacter(ClassData classData, GameObject prefab, int floorBonus = 0)
+    public static CharacterStats CreateCharacter(ClassData classData, GameObject prefab,NameDatabase nameDatabase, int floorBonus = 0)
     {
         GameObject go = Instantiate(prefab);
         CharacterStats stats = go.GetComponent<CharacterStats>();
         go.GetComponent<SpriteRenderer>().sprite = classData.sprite;
 
-        stats.characterName = classData.className;
+        stats.characterName = nameDatabase.GetRandom(classData.gender);
         stats.classData = classData;
         stats.maxHP = Random.Range(classData.minHP, classData.maxHP) + floorBonus;
         stats.currentHP = stats.maxHP;

@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+  sceneName: 
 --- !u!1 &354869148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1123,7 @@ GameObject:
   - component: {fileID: 990245071}
   - component: {fileID: 990245070}
   - component: {fileID: 990245069}
+  - component: {fileID: 990245072}
   m_Layer: 5
   m_Name: TavernButton
   m_TagString: Untagged
@@ -1193,9 +1195,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1029309895}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadTavern
+      - m_Target: {fileID: 990245072}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1243,50 +1245,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990245067}
   m_CullTransparentMesh: 1
---- !u!1 &1029309894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1029309896}
-  - component: {fileID: 1029309895}
-  m_Layer: 0
-  m_Name: SceneLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1029309895
+--- !u!114 &990245072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029309894}
+  m_GameObject: {fileID: 990245067}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
---- !u!4 &1029309896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029309894}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: TavernScene
 --- !u!1 &1081905359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2005,7 @@ GameObject:
   - component: {fileID: 1294319943}
   - component: {fileID: 1294319942}
   - component: {fileID: 1294319941}
+  - component: {fileID: 1294319944}
   m_Layer: 5
   m_Name: BlacksmithButton
   m_TagString: Untagged
@@ -2104,7 +2076,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1294319942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294319944}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1294319942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2127,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294319939}
   m_CullTransparentMesh: 1
+--- !u!114 &1294319944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294319939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: BlacksmithScene
 --- !u!1 &1350642740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2289,7 @@ GameObject:
   - component: {fileID: 1352281216}
   - component: {fileID: 1352281215}
   - component: {fileID: 1352281214}
+  - component: {fileID: 1352281217}
   m_Layer: 5
   m_Name: BaracksButton
   m_TagString: Untagged
@@ -2362,7 +2360,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1352281215}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1352281217}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1352281215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2401,6 +2411,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352281212}
   m_CullTransparentMesh: 1
+--- !u!114 &1352281217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352281212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: BarackScene
 --- !u!1 &1505438586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +2548,7 @@ GameObject:
   - component: {fileID: 1709241698}
   - component: {fileID: 1709241697}
   - component: {fileID: 1709241696}
+  - component: {fileID: 1709241699}
   m_Layer: 5
   m_Name: EnterDungeonButton
   m_TagString: Untagged
@@ -2596,9 +2620,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1029309895}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadCombat
+      - m_Target: {fileID: 1709241699}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2646,6 +2670,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709241694}
   m_CullTransparentMesh: 1
+--- !u!114 &1709241699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709241694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccef28389694f6468b786507bd4a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: CombatScene
 --- !u!1 &1763009539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,4 +3036,3 @@ SceneRoots:
   - {fileID: 336417158}
   - {fileID: 325261161}
   - {fileID: 4076613}
-  - {fileID: 1029309896}
